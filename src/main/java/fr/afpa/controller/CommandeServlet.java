@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fr.afpa.model.Commande;
+import fr.afpa.model.Utilisateur;
 import fr.afpa.service.CommandeService;
 
 /**
@@ -45,14 +46,19 @@ public class CommandeServlet extends HttpServlet {
 		//doGet(request, response);
 		HttpSession session = request.getSession();
 		List<Commande> commandeList = new ArrayList<>();
-		for(Commande commande : commandeService.findAll()) {
-			if(commande.getUtilisateur() == session.getAttribute("utilisateurSession")){
-				commandeList.add(commande);
+		Utilisateur utilisateur = (Utilisateur) session.getAttribute("utilisateurSession");
+		if(utilisateur.getRole_Utilisateur().getIdRole() == 2) {
+			for(Commande commande : commandeService.findAll()) {
+				if(commande.getUtilisateur() == utilisateur){
+					commandeList.add(commande);
+				}
 			}
+			request.setAttribute("commandes",commandeList);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/Client/Commandes.jsp").forward(request, response);
+		}else {
+			request.setAttribute("commandes",commandeService.findAll());
+			this.getServletContext().getRequestDispatcher("/WEB-INF/Admin/CommandesClients.jsp").forward(request, response);
 		}
-		
-		request.setAttribute("commandes",commandeList);
-		this.getServletContext().getRequestDispatcher("/WEB-INF/Client/Commandes.jsp").forward(request, response);
 	}
 
 }

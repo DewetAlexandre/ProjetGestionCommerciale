@@ -14,7 +14,7 @@
 <%@ include file="/header.jsp" %>
 </head>
 <body>
-	<p><c:out value="${ commande.getId_commande() }"/></p>
+	<p><c:out value="${ commande.getIdCommande() }"/></p>
 	<p><c:out value="${ commande.getMontant() }"/></p>
 	<p><c:out value="${ commande.getUtilisateur().getNom() }"/></p>
 	<p><c:out value="${ commande.getUtilisateur().getPrenom() }"/></p>
