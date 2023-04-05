@@ -1,0 +1,77 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ConnexionServlet</servlet-name>
+  	<display-name>ConnexionServlet</display-name>
+  	<description></description>
+  	<servlet-class>fr.afpa.controller.ConnexionServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>InscriptionServlet</servlet-name>
+  	<display-name>InscriptionServlet</display-name>
+  	<description></description>
+  	<servlet-class>fr.afpa.controller.InscriptionServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeconnectionServlet</servlet-name>
+  	<display-name>DeconnectionServlet</display-name>
+  	<description></description>
+  	<servlet-class>fr.afpa.controller.DeconnectionServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CatalogueServlet</servlet-name>
+  	<display-name>CatalogueServlet</display-name>
+  	<description></description>
+  	<servlet-class>fr.afpa.controller.CatalogueServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ProduitServlet</servlet-name>
+  	<display-name>ProduitServlet</display-name>
+  	<description></description>
+  	<servlet-class>fr.afpa.controller.ProduitServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PanierServlet</servlet-name>
+  	<display-name>PanierServlet</display-name>
+  	<description></description>
+  	<servlet-class>fr.afpa.controller.PanierServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ProduitsClientServlet</servlet-name>
+  	<display-name>ProduitsClientServlet</display-name>
+  	<description></description>
+  	<servlet-class>fr.afpa.controller.ProduitsClientServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ConnexionServlet</servlet-name>
+  	<url-pattern>/ConnexionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>InscriptionServlet</servlet-name>
+  	<url-pattern>/InscriptionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeconnectionServlet</servlet-name>
+  	<url-pattern>/DeconnectionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CatalogueServlet</servlet-name>
+  	<url-pattern>/CatalogueServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProduitServlet</servlet-name>
+  	<url-pattern>/ProduitServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PanierServlet</servlet-name>
+  	<url-pattern>/PanierServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProduitsClientServlet</servlet-name>
+  	<url-pattern>/ProduitsClientServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
