@@ -26,7 +26,7 @@
 			</div>
 			<div>
 				<label>Mot de passe</label><input type="password" required name="passwordConnect">
-				<input type="submit">
+				<input type="submit" value="Se connecter">
 			</div>
 		</form>
 		
@@ -46,10 +46,13 @@
 			</div>
 			<div>
 				<label>Prenom</label>
-				<input type="prenom" required name="prenomInscript">
+				<input type="prenom" required name="prenomInscript" value="S'inscrire">
 			</div>
 			<input type="submit">
 		</form>
 	</div>	
+	<form action="CatalogueServlet" class="" method="get">
+		<input type="submit" value="Consulter le catalogue">
+	</form>
 </body>
 </html>

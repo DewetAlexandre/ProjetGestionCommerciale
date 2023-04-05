@@ -46,6 +46,18 @@
   	<description></description>
   	<servlet-class>fr.afpa.controller.ProduitsClientServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>PaiementServlet</servlet-name>
+  	<display-name>PaiementServlet</display-name>
+  	<description></description>
+  	<servlet-class>fr.afpa.controller.PaiementServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CommandeServlet</servlet-name>
+  	<display-name>CommandeServlet</display-name>
+  	<description></description>
+  	<servlet-class>fr.afpa.controller.CommandeServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ConnexionServlet</servlet-name>
   	<url-pattern>/ConnexionServlet</url-pattern>
@@ -73,5 +85,13 @@
   <servlet-mapping>
   	<servlet-name>ProduitsClientServlet</servlet-name>
   	<url-pattern>/ProduitsClientServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PaiementServlet</servlet-name>
+  	<url-pattern>/PaiementServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CommandeServlet</servlet-name>
+  	<url-pattern>/CommandeServlet</url-pattern>
   </servlet-mapping>
 </web-app>

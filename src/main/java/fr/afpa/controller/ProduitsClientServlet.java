@@ -51,19 +51,23 @@ public class ProduitsClientServlet extends HttpServlet {
 		Integer quantite = Integer.parseInt(request.getParameter("quantite"));
 		HttpSession session = request.getSession();
 		List<Commande_Produit>panier = (List<Commande_Produit>) session.getAttribute("panier");
+		System.out.print(idProduit);
 		Boolean verif = false;
-		if(panier != null) {
+		if(panier.isEmpty()) {
+			panier.add(new Commande_Produit(quantite, null, produitService.find(idProduit)));
+			System.out.print(panier.toString());
+			verif = true;
+		}else {
 			for(Commande_Produit cmdprd : panier) {
 				if(cmdprd.getProduit().getIdProduit() == idProduit) {
 					cmdprd.setQuantite(cmdprd.getQuantite() + quantite);
 					verif = true;
-					break;
 				}
 			}
 		}
-		
-		if(verif = false) {
+		if(verif == false) {
 			panier.add(new Commande_Produit(quantite, null, produitService.find(idProduit)));
+			System.out.print(panier.toString());
 		}
 		
 		List<Produit> listProduit = produitService.findAll();

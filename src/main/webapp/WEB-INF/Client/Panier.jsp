@@ -9,11 +9,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Panier</title>
+<%@ include file="/header.jsp" %>
 </head>
 <body>
-	<c:forEach items="${ panier }" var="element">
-		<p>${ element.toString() }</p>
+	<c:set var="pan" value="${panier}"/>
+	<c:set var="ope" value="${oper}"/>
+	<c:forEach items="${pan}" var="elem">
+	<p>${ elem.toString() }</p>
+		<p>${ elem.getProduit().getLibelle() }</p>
+		<p>${ elem.getProduit().getPrix() }</p>
+		<p>${ elem.getQuantite() }</p>
+		
+		<form action="PanierServlet" method="post">
+			<input type="hidden" value="${pan.indexOf(elem)}" name="elemPanier">
+			<input type="hidden" value="${ope[0]}" name="operation">
+			<input type="submit" value="+">
+		</form>
+		<form action="PanierServlet" method="post">
+			<input type="hidden" value="${pan.indexOf(elem)}" name="elemPanier">
+			<input type="hidden" value="${ope[1]}" name="operation">
+			<input type="submit" value="-">
+		</form>
+		<form action="PanierServlet" method="post">
+			<input type="hidden" value="${pan.indexOf(elem)}" name="elemPanier">
+			<input type="hidden" value="${ope[2]}" name="operation">
+			<input type="submit" value="supprimer">
+		</form>
 	</c:forEach>
+	<form action="PaiementServlet" method="get">
+			<input type="submit" value="Valider le panier">
+		</form>
 </body>
 </html>

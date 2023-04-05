@@ -43,7 +43,7 @@ public class ConnexionServlet extends HttpServlet {
 				this.getServletContext().getRequestDispatcher("/WEB-INF/Admin/AcceuilAdmin.jsp").forward(request, response);
 				
 			}else {
-				List<Commande_Produit> panier = new ArrayList();
+				List<Commande_Produit> panier = new ArrayList<>();
 				session.setAttribute("panier", panier);
 				this.getServletContext().getRequestDispatcher("/WEB-INF/Client/AcceuilClient.jsp").forward(request, response);
 			}
@@ -59,7 +59,8 @@ public class ConnexionServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
-		
+		this.getServletContext().getRequestDispatcher("/WEB-INF/Client/AcceuilClient.jsp").forward(request, response);
+
 		
 	}
 

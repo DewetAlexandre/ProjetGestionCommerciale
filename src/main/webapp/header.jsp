@@ -36,8 +36,7 @@
 			  	<div class="">  
 				    <form action="ProduitsClientServlet" method="get"><input type="submit" value="Ajouter un produit au panier"></form>
 				    <form action="PanierServlet" method="get"><input type="submit" value="Panier"></form>
-				    <a class="navbar-brand" href="/GestionCommerciale/src/main/webapp/WEB-INF/Client/Commandes.jsp">Commandes</a>
-				    
+				    <form action="CommandeServlet" method="post"><input type="submit" value="Consulter les commandes"></form>
 				    <form action="DeconnectionServlet" method="post"><input type="submit" value="Déconnexion"></form>
 			  </div>
 			</nav>
